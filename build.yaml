@@ -1,6 +1,6 @@
 ---
 include:
-  - board: seeeduino_xiao
+  - board: seeeduino_xiao_ble
     shield: dactyl_manuform_4x5_left
-  - board: seeeduino_xiao
+  - board: seeeduino_xiao_ble
     shield: dactyl_manuform_4x5_right
