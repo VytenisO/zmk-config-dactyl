@@ -1,0 +1,6 @@
+---
+include:
+  - board: seeeduino_xiao
+    shield: dactyl_manuform_4x5_left
+  - board: seeeduino_xiao
+    shield: dactyl_manuform_4x5_right
