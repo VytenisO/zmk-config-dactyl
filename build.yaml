@@ -3,8 +3,8 @@ include:
   - board: xiao_ble//zmk
     shield: dactyl_manuform_4x5_left
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -CONFIG_ZMK_BLE_EXPERIMENTAL_FEATURES=y
   - board: xiao_ble//zmk
-    shield: dactyl_manuform_4x5_right
+    shield: dactyl_manuform_4x5_right -CONFIG_ZMK_BLE_EXPERIMENTAL_FEATURES=y
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
