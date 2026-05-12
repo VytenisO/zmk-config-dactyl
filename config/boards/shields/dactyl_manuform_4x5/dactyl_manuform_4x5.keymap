@@ -24,6 +24,12 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
 
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -42,7 +48,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
                 &hml LGUI A    &hml LALT S    &hml LSHFT D   &hml LCTRL F   &kp G                      &kp H          &hmr LCTRL J   &hmr RSHFT K   &hmr LALT L    &hmr LGUI SEMI
                 &kp Z          &kp X          &kp C          &kp V          &kp B                      &kp N          &kp M          &kp COMMA      &kp DOT        &kp FSLH
                                &mo 1          &mo 1                                                                                    &mo 2          &mo 2
-                                                              &mo 1          &mo 1    &mo 1             &mo 2          &mo 2          &mo 2
+                                                              &kp SPACE      &mo 1    &mo 1             &mo 2          &lt 2 RET      &kp BSPC
             >;
         };
 
