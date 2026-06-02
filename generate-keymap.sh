@@ -41,6 +41,8 @@ with open(yaml_path, 'w') as f:
     f.write(content)
 PYEOF
 
+CONFIG="$SCRIPT_DIR/keymap_drawer.config.yaml"
+
 echo "Drawing SVG..."
-"$VENV/bin/keymap" draw "$KEYMAP_YAML" > "$OUTPUT_SVG"
+"$VENV/bin/keymap" -c "$CONFIG" draw "$KEYMAP_YAML" > "$OUTPUT_SVG"
 echo "Generated: $OUTPUT_SVG"

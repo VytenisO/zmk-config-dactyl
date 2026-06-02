@@ -1,0 +1,151 @@
+parse_config:
+  zmk_keycode_map:
+    # Custom behaviors
+    comma_morph: ",  ;"
+    dot_morph: ".  :"
+    bs_del: "⌫  Del"
+    # Cleaner labels for common keys
+    BSPC: "⌫"
+    DEL: "Del"
+    RET: "↵"
+    TAB: "⇥"
+    ESC: "Esc"
+    SPACE: "␣"
+    LEFT: "←"
+    RIGHT: "→"
+    UP: "↑"
+    DOWN: "↓"
+    LGUI: "GUI"
+    RGUI: "GUI"
+    LALT: "Alt"
+    RALT: "Alt"
+    LSHFT: "Shift"
+    RSHFT: "Shift"
+    LCTRL: "Ctrl"
+    RCTRL: "Ctrl"
+    SEMI: ";"
+    FSLH: "/"
+    BSLH: "\\"
+    GRAVE: "`"
+    LBKT: "["
+    RBKT: "]"
+    LBRC: "{"
+    RBRC: "}"
+    LPAR: "("
+    RPAR: ")"
+    MINUS: "-"
+    EQUAL: "="
+    UNDER: "_"
+    PLUS: "+"
+    PIPE: "|"
+    TILDE: "~"
+    EXCL: "!"
+    AT: "@"
+    HASH: "#"
+    DLLR: "$"
+    PRCNT: "%"
+    CARET: "^"
+    AMPS: "&"
+    STAR: "*"
+    LESS_THAN: "<"
+    GREATER_THAN: ">"
+    # BT
+    BT_CLR: "BT Clr"
+    BT_SEL 0: "BT 0"
+    BT_SEL 1: "BT 1"
+    BT_SEL 2: "BT 2"
+    BT_SEL 3: "BT 3"
+    studio_unlock: "Studio"
+    bootloader: "Boot"
+
+draw_config:
+  key_w: 60
+  key_h: 56
+  split_gap: 30
+  key_rx: 6
+  key_ry: 6
+  inner_pad_w: 2.0
+  inner_pad_h: 2.0
+  outer_pad_w: 24.0
+  outer_pad_h: 12.0
+  line_spacing: 1.2
+  append_colon_to_layer_header: false
+  footer_text: "VytenisO/zmk-config-dactyl"
+  draw_key_sides: true
+  key_side_pct: 0.7
+  svg_extra_style: |
+    /* Ayu Dark — blue body, brown/dark keys, orange highlights */
+
+    /* Font */
+    svg {
+      font-family: "Calibri", "Segoe UI", system-ui, sans-serif;
+      background: #0d1017;
+    }
+
+    /* Base key — dark blue-grey surface, like the keyboard body */
+    rect.key {
+      fill: #1a2332;
+      stroke: #2a3a50;
+      stroke-width: 1.5;
+    }
+    rect.key.held {
+      fill: #253346;
+    }
+    rect.key.ghost {
+      fill: #131b28;
+      opacity: 0.5;
+    }
+    rect.key-side {
+      fill: #0d1017;
+    }
+
+    /* Text — Ayu foreground */
+    text.tap {
+      font-size: 14px;
+      font-weight: 500;
+      fill: #bfbdb6;
+    }
+    text.hold {
+      font-size: 11px;
+      font-weight: 400;
+      fill: #626a73;
+    }
+    text.shifted {
+      font-size: 10px;
+      font-weight: 400;
+      fill: #4d5566;
+    }
+
+    /* Layer headers */
+    text.label {
+      font-size: 20px;
+      font-weight: 700;
+      fill: #bfbdb6;
+    }
+
+    /* Footer */
+    text.footer {
+      fill: #626a73;
+    }
+
+    /* lower layer = nav — Ayu blue */
+    .layer-lower rect.key { fill: #0e2030; stroke: #39bae6; stroke-width: 2; }
+    .layer-lower rect.key-side { fill: #091520; }
+
+    /* raise layer = symbols — Ayu orange */
+    .layer-raise rect.key { fill: #2e1c08; stroke: #ff8f40; stroke-width: 2; }
+    .layer-raise rect.key-side { fill: #1c1005; }
+
+    /* adjust layer = system — Ayu green */
+    .layer-adjust rect.key { fill: #0a2010; stroke: #aad94c; stroke-width: 2; }
+    .layer-adjust rect.key-side { fill: #061508; }
+
+    /* trans keys — fade back to base */
+    .layer-lower rect.key.trans,
+    .layer-raise rect.key.trans,
+    .layer-adjust rect.key.trans {
+      fill: #1a2332;
+      stroke: #2a3a50;
+      stroke-width: 1.5;
+      opacity: 0.4;
+    }
