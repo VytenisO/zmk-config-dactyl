@@ -2,6 +2,17 @@
 
 ZMK firmware configuration for Dactyl Manuform 4x5 split keyboard with Seeed XIAO BLE (nRF52840) controllers.
 
+## IMPORTANT: Your OS keyboard layout matters
+
+ZMK assumes you're using **US keyboard layout** on your computer. If your OS is
+set to french or somehting (or anything else), you'll get completely wrong
+characters and go insane trying to figure out why semicolon outputs fromage
+
+Set your OS keyboard layout to US English. This isn't optional. The firmware
+sends US HID scancodes and your OS interprets them based on what layout you've
+configured. If you need cool special characters, use layers or compose keys like
+the rest of us dealing with this nonsense.
+
 ## Building Firmware
 
 **You don't build locally.** GitHub Actions builds the firmware automatically.
@@ -68,11 +79,18 @@ but also means anyone with physical access and knowledge of the key combo can
 flash malicious firmware in 5 seconds. If that's a problem, you've got bigger
 issues than this keyboard.
 
+## Keymap Visualization
+
+Uses [keymap-drawer](https://github.com/caksoylar/keymap-drawer) by caksoylar. Run `bash generate-keymap.sh` to regenerate `keymap.svg` after editing the keymap. Run `bash watch-keymap.sh` to auto-regenerate on every save (requires `pacman -S inotify-tools`).
+
 ## File Structure
 
 ```
 zmk-config/
 ├── build.yaml                          # Defines what boards to build
+├── generate-keymap.sh                  # Regenerate keymap.svg
+├── watch-keymap.sh                     # Auto-regenerate on keymap changes
+├── keymap.svg                          # Visualized keymap (tracked)
 ├── config/
 │   ├── west.yml                       # ZMK repository reference
 │   └── boards/shields/dactyl_manuform_4x5/
